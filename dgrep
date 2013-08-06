@@ -32,17 +32,23 @@
 #          * Added invert-match feature
 #          * Added usage sub for execution failures
 #
+# Version: 2.1 - 2013-07-25 - David Klein <david@soinkleined.com>
+#          * Added -a option to print all text and show matches inline for Darren Watson
+#          * Added -n option to prepend line number
+#
 ####################################
 
 use strict;
 use warnings;
 use Getopt::Long qw(:config no_ignore_case bundling);
 
+my $All='';
 my $Insensitive='';
 my $Paragraph='';
 my $Word='';
 my $InvertMatch='';
-my $Version='2.0';
+my $Number='';
+my $Version='2.1';
 my $Prefix='';
 
 my $Red = "\e[1;31m";
@@ -58,9 +64,11 @@ my $Bold    = "\e[1m";
 # Command Arguments
 ####################################### 
 
-GetOptions ('i|insensitive!' => \$Insensitive,
+GetOptions ('a|all!' => \$All,
+	'i|insensitive!' => \$Insensitive,
         'p|paragraph!' => \$Paragraph,
         'h|help' => \&help,
+        'n|number!' => \$Number,
         'V|version' => \&version,
         'v|invert-match=s' => \$InvertMatch,
         'w|word!' => \$Word,
@@ -108,8 +116,12 @@ my $CannotOpen=0;
 		}
 	}
 	if ($Matched){
+		$_="$.: $_" if ($Number);
 		print "$Prefix$_" unless (($InvertMatch) and ($_ =~ /$InvertMatch/)); 
-	} 
+	} else{ 
+		$_="$.: $_" if ($Number);
+		print "$_" if ($All && ! $Paragraph);
+	}
     }
 close $FILE unless $STDINexists;
 }
@@ -136,8 +148,10 @@ sub help{
     ".$Bold."dgrep".$Reset." [".$Bold."-h".$Reset." | ".$Bold."-V".$Reset."]
 
 ".$Bold."DESCRIPRION".$Reset."
+    ".$Bold."-a".$Reset.", ".$Bold."--all".$Reset."			print all text with matches inline
     ".$Bold."-h".$Reset.", ".$Bold."--help".$Reset."			print this help
     ".$Bold."-i".$Reset.", ".$Bold."--insensitive".$Reset."		match case insensitive
+    ".$Bold."-n".$Reset.", ".$Bold."--number".$Reset."		prepend line number
     ".$Bold."-p".$Reset.", ".$Bold."--paragraph".$Reset."		match in paragraph context
     ".$Bold."-V".$Reset.", ".$Bold."--version".$Reset."		print version information and exit 
     ".$Bold."-v".$Reset.", ".$Bold."--invert-match".$Reset."		selected lines do not match specified pattern
