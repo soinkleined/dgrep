@@ -144,7 +144,7 @@ sub help{
     dgrep -- David's badass grep with fancy colors and cool features
 
 ".$Bold."SYNOPSIS".$Reset."
-    ".$Bold."dgrep".$Reset." [".$Bold."-wip".$Reset."] [expression] [".$Bold."-v".$Reset."] [expression] [file ...]
+    ".$Bold."dgrep".$Reset." [".$Bold."-ainpw".$Reset."] [expression] [".$Bold."-v".$Reset."] [expression] [file ...]
     ".$Bold."dgrep".$Reset." [".$Bold."-h".$Reset." | ".$Bold."-V".$Reset."]
 
 ".$Bold."DESCRIPRION".$Reset."
