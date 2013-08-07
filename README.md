@@ -1,12 +1,12 @@
 <p>NAME
-    dgrep -- David's badass grep with fancy colors and cool features</p>
+<p>    dgrep -- David's badass grep with fancy colors and cool features</p>
 
 <p>SYNOPSIS
-    dgrep [-ainpw] [expression] [-v] [expression] [file ...]
+<p>    dgrep [-ainpw] [expression] [-v] [expression] [file ...]
     dgrep [-h | -V]</p>
 
 <p>DESCRIPRION
-    -a, --all           print all text with matches inline
+<p>    -a, --all           print all text with matches inline
     -h, --help          print this help
     -i, --insensitive       match case insensitive
     -n, --number        prepend line number
