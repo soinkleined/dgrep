@@ -1,12 +1,14 @@
-<pre>
 NAME
+
     dgrep -- David's badass grep with fancy colors and cool features
 
 SYNOPSIS
+
     dgrep [-ainpw] [expression] [-v] [expression] [file ...]
     dgrep [-h | -V]
 
 DESCRIPRION
+
     -a, --all			print all text with matches inline
     -h, --help			print this help
     -i, --insensitive		match case insensitive
@@ -22,4 +24,3 @@ DESCRIPRION
     in yellow.
 
 Report bugs to <david@soinkleined.com>
-</pre>
