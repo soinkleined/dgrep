@@ -9,14 +9,14 @@ SYNOPSIS
 
 DESCRIPRION
 
-    -a, --all			print all text with matches inline
-    -h, --help			print this help
-    -i, --insensitive		match case insensitive
-    -n, --number		prepend line number
-    -p, --paragraph		match in paragraph context
-    -V, --version		print version information and exit 
-    -v, --invert-match		selected lines do not match specified pattern
-    -w, --word			match whole word
+    -a, --all           print all text with matches inline
+    -h, --help          print this help
+    -i, --insensitive   match case insensitive
+    -n, --number        prepend line number
+    -p, --paragraph     match in paragraph context
+    -V, --version       print version information and exit 
+    -v, --invert-match  selected lines do not match specified pattern
+    -w, --word          match whole word
 
     Matched expressions will be highlighted to illustrate against which criteria they were matched.
     Whole word matches will be highlighted in magenta and supercede other highlighted colors. Exact
